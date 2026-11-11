@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegalFlow – Legal Document Review Workflow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="logo">⚖️ LegalFlow</div>
+    <nav id="nav">
+      <button data-view="dashboard">📊 Dashboard</button>
+      <button data-view="documents">📁 All Documents</button>
+      <button data-view="pending">⏳ Pending Reviews</button>
+      <button data-view="completed">✅ Completed</button>
+      <button data-view="reviewers">👥 Reviewers</button>
+      <button data-view="reports">📈 Reports</button>
+      <button data-view="settings">⚙️ Settings</button>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <!-- TOP NAVBAR -->
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      <h1 id="pageTitle">Dashboard</h1>
+      <div class="search">
+        <label for="search" class="sr">Search documents</label>
+        <input id="search" type="search" placeholder="🔍 Search name, client, reviewer, tag…">
+      </div>
+      <div class="top-actions">
+        <div class="notif-wrap">
+          <button class="icon-btn" id="notifBtn" aria-label="Notifications" title="Notifications">🔔<span id="notifCount" class="badge-dot"></span></button>
+          <div id="notifPanel" class="notif-panel" hidden></div>
+        </div>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark or light mode" title="Dark / light mode">🌙</button>
+        <div class="profile"><span class="avatar" id="userAvatar">AU</span><span id="userName">Admin User</span></div>
+      </div>
+    </header>
+    <main id="view" tabindex="-1"></main>
+  </div>
+
+  <div id="modal" class="modal-backdrop" hidden><div class="modal" id="modalBox" role="dialog" aria-modal="true"></div></div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
